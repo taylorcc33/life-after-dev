@@ -32,12 +32,11 @@ const LandingPage = () => {
       <SearchBar />
       <LandingInfoWrap>
         <SiteInfoContainer>
-          
           <LandingLogoCon src={LandingLogo}></LandingLogoCon>
-        
+
           <p>
-            {" "} 
-               Life After Dev is a place for developers to share their ideas and
+            {" "}
+            Life After Dev is a place for developers to share their ideas and
             explore other projects that they might be interested in. Although
             many of us started at{" "}
             <a href="https://www.devpointlabs.com/">DevPointLabs</a>, anyone can

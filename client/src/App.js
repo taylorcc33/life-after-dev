@@ -35,7 +35,7 @@ function App() {
                   path="/profile/:id/settings"
                   component={UserSettings}
                 />
-                <Route exact path="/results/:query" component={ResultsPage} />
+                <Route exact path="/results" component={ResultsPage} />
                 <Route component={NoMatch} />
               </Switch>
             </Container>

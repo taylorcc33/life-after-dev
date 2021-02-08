@@ -41,20 +41,18 @@ const SearchResults = ({ results }) => {
     }
   };
 
-  const renderNoResults = () => {
-    if (!query) {
-      return <h3>No Results</h3>;
-    }
-  };
-
   const renderResults = () => {
-    if (results)
+    if (results) {
       return results?.map((r) => {
-        <>
-          <ContributingProject key={r.id} project_id={r.id} />
-          <span style={{ marginRight: 20 }}></span>
-        </>;
+        return (
+          <div style={{ marginRight: 30 }}>
+            <ContributingProject key={r.id} project_id={r.id} />
+          </div>
+        );
       });
+    } else {
+      return <h3 style={{ marginTop: 40 }}>No Results</h3>;
+    }
   };
 
   return (
@@ -62,19 +60,10 @@ const SearchResults = ({ results }) => {
       <Grid>
         <Grid.Row>
           <Grid.Column width={12}>
-            {renderNoResults()}
             {renderProjectFormModal()}
-            <Flex>
-              {results?.map((r) => (
-                <div style={{ marginRight: 30 }}>
-                  <ContributingProject key={r.id} project_id={r.id} />
-                </div>
-              ))}
-              {/* {renderResults()} */}
-            </Flex>
+            <Flex>{renderResults()}</Flex>
           </Grid.Column>
           <Grid.Column width={4}>
-            {/* {query ? renderProjectFormModal() : renderNothing()} */}
           </Grid.Column>
         </Grid.Row>
       </Grid>
