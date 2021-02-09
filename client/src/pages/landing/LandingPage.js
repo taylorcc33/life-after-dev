@@ -27,6 +27,16 @@ const LandingPage = () => {
     margin-bottom: 10px;
   `;
 
+  const renderRegisterButton = () => {
+    if (user?.id == null) {
+      return (
+        <Link to={`/register`}>
+          <SiteInfoRegisterButton>Register</SiteInfoRegisterButton>
+        </Link>
+      );
+    }
+  };
+
   return (
     <>
       <SearchBar />
@@ -46,9 +56,7 @@ const LandingPage = () => {
           <p>
             <Link to={`/about`}>Learn about Life After Dev's developers</Link>
           </p>
-          <Link to={`/register`}>
-            <SiteInfoRegisterButton>Register</SiteInfoRegisterButton>
-          </Link>
+          {renderRegisterButton()}
         </SiteInfoContainer>{" "}
         {user?.id !== null && <LandingLogin />}
       </LandingInfoWrap>
