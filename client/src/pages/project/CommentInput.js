@@ -11,16 +11,18 @@ export default function CommentInput({ project, updateComments }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      let res = await Axios.post(`/api/projects/${project.id}/comments`, {
-        body: comment,
-      });
-      console.log("axios post for comment", res.data);
-      updateComments(res.data);
-      setComment("");
-      console.log(res);
-    } catch (error) {
-      console.log(error);
+    if (comment.length !== 0) {
+      try {
+        let res = await Axios.post(`/api/projects/${project.id}/comments`, {
+          body: comment,
+        });
+        console.log("axios post for comment", res.data);
+        updateComments(res.data);
+        setComment("");
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
