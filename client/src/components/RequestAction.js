@@ -21,7 +21,7 @@ const RequestAction = (props) => {
   };
 
   const renderRequestButton = () => {
-    if (requestStatus == null) {
+    if (requestStatus == "Join") {
       return props.page == "landing" ? (
         <StyledButton onClick={handleClick}>{requestStatus}</StyledButton>
       ) : (
