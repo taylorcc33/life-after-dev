@@ -147,6 +147,7 @@ const Project = (props) => {
 
   const renderJoinButton = () => {
     if (user?.id !== owner.id) {
+      
       return (
         <JoinButtonDiv>
           <RequestAction projectId={project?.id} userId={project?.user_id} />

@@ -13,8 +13,10 @@ const useRequest = (project, id) => {
           if (r.user_id === id) {
             if (r.contributor === true) {
               setRequestStatus("Joined");
+              console.log("request status joined");
             } else {
               setRequestStatus("Pending");
+              console.log("request status pending");
             }
           }
         });
