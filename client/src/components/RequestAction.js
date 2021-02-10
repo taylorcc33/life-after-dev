@@ -21,7 +21,7 @@ const RequestAction = (props) => {
   };
 
   const renderRequestButton = () => {
-    if (requestStatus !== "Joined") {
+    if (requestStatus == null) {
       return props.page == "landing" ? (
         <StyledButton onClick={handleClick}>{requestStatus}</StyledButton>
       ) : (
@@ -36,6 +36,8 @@ const RequestAction = (props) => {
       );
     } else if (requestStatus == "Joined") {
       return <h3 style={{ color: "black" }}>Joined</h3>;
+    } else if (requestStatus == "Pending") {
+      return <h3 style={{ color: "black" }}>Pending</h3>;
     }
   };
 
