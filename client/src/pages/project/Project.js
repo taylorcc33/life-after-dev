@@ -147,7 +147,6 @@ const Project = (props) => {
 
   const renderJoinButton = () => {
     if (user?.id !== owner.id) {
-      
       return (
         <JoinButtonDiv>
           <RequestAction projectId={project?.id} userId={project?.user_id} />
@@ -161,9 +160,9 @@ const Project = (props) => {
   return (
     <>
       <Wrapper>
-      {seen ? (
-        <ProjectPicModal toggle={togglePic} user={user} project={project} />
-      ) : null}
+        {seen ? (
+          <ProjectPicModal toggle={togglePic} user={user} project={project} />
+        ) : null}
         <ProjectSection>
           <BackButton>
             <RealBackButton onClick={() => history.goBack()}>

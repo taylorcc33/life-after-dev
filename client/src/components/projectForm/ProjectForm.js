@@ -4,7 +4,6 @@ import { useDropzone } from "react-dropzone";
 import { useHistory } from "react-router-dom";
 import { Button, Form, Header, Image, Modal } from "semantic-ui-react";
 
-
 const formFields = [
   { title: "Project Title", name: "title" },
   { title: "Github Link", name: "github_link" },
@@ -12,37 +11,26 @@ const formFields = [
   { title: "Live Link", name: "live_link" },
 ];
 
-const ProjectForm = ({ query, addProject, closeModal, p }) => {
-  const [project, setProject] = useState(
-    // ?
-    {
-      title: query,
-      github_link: "",
-      description: "",
-      live_link: "",
-    }
-    // :
-    //  {
-    //     title: "",
-    //     pcture: "",
-    //     github_link: "",
-    //     description: "",
-    //     live_link: "",
-    //   }
-  );
-  const [image, setImage] = useState(null)
-  let history = useHistory()
+const ProjectForm = ({ query, addProject, closeModal, userId }) => {
+  const [project, setProject] = useState({
+    title: query,
+    github_link: "",
+    description: "",
+    live_link: "",
+  });
+  const [image, setImage] = useState(null);
+  let history = useHistory();
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
     setImage(acceptedFiles[0]);
-    console.log(acceptedFiles[0])
+    console.log(acceptedFiles[0]);
   }, []);
 
   const handleSubmit = (e) => {
     console.log("Project Add submit clicked");
     addProject(project, image, history);
-    closeModal()
-    
+
+    closeModal();
   };
 
   const styles = {
@@ -62,8 +50,8 @@ const ProjectForm = ({ query, addProject, closeModal, p }) => {
       padding: "20px",
       borderRadius: "5px",
       border: "2px solid black",
-    }
-  }
+    },
+  };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
@@ -82,17 +70,20 @@ const ProjectForm = ({ query, addProject, closeModal, p }) => {
             onChange={(e) =>
               setProject({ ...project, [e.target.name]: e.target.value })
             }
-          />   
+          />
         ))}
-        <div >
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              {isDragActive ? (
-                <p>Drop the files here ...</p>
-                ) : (
-                <p>Drag and drop a screenshot of your project here, or click to select a file.</p>
-              )}
-            </div>
+        <div>
+          <div {...getRootProps()}>
+            <input {...getInputProps()} />
+            {isDragActive ? (
+              <p>Drop the files here ...</p>
+            ) : (
+              <p>
+                Drag and drop a screenshot of your project here, or click to
+                select a file.
+              </p>
+            )}
+          </div>
         </div>
         <Button color="green">Submit</Button>
       </Form>
