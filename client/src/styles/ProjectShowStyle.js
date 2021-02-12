@@ -186,6 +186,7 @@ export const UserPic = styled.img`
 
 export const CommentName = styled.div`
   margin-left: 5px;
+  color: #fff;
 `;
 
 export const CommentBody = styled.div`

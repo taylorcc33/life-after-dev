@@ -49,10 +49,7 @@ const Scroller = ({ currentUser }) => {
 
   return (
     <>
-    
-      
       <div className="scroll">
-      
         <InfiniteScroll
           threshold={10}
           pageStart={0}
@@ -60,7 +57,6 @@ const Scroller = ({ currentUser }) => {
           hasMore={moreProjects}
           loader={<div className="text-center">loading projects ...</div>}
         >
-            
           {incomingProject.map((incomingProject) => (
             <>
               <LandingProjectCard

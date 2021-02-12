@@ -17,7 +17,7 @@ const NavAddModal = ({ query, editing }) => {
 
   const editProject = () => {};
 
-  const addProject = async (newProject, image) => {
+  const addProject = async (newProject, image, history) => {
     if (image == null) {
       alert("Image can't be blank");
       return;
@@ -40,6 +40,7 @@ const NavAddModal = ({ query, editing }) => {
         options
       );
       console.log("project added", res);
+      history.push(`/projects/${res.data.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -69,6 +70,7 @@ const NavAddModal = ({ query, editing }) => {
               query={query}
               addProject={addProject}
               closeModal={closeModal}
+              userId={user.id}
             />
           )}
         </Modal.Description>

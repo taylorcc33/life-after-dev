@@ -11,15 +11,18 @@ export default function CommentInput({ project, updateComments }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      let res = await Axios.post(`/api/projects/${project.id}/comments`, {
-        body: comment,
-      });
-      console.log("axios post for comment", res.data);
-      updateComments(res.data);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
+    if (comment.length !== 0) {
+      try {
+        let res = await Axios.post(`/api/projects/${project.id}/comments`, {
+          body: comment,
+        });
+        console.log("axios post for comment", res.data);
+        updateComments(res.data);
+        setComment("");
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -30,7 +33,11 @@ export default function CommentInput({ project, updateComments }) {
   return (
     <Wrapper>
       <form onSubmit={handleSubmit}>
-        <NewComment onChange={handleChange} placeholder="Write a comment..." />
+        <NewComment
+          onChange={handleChange}
+          placeholder="Write a comment..."
+          value={comment}
+        />
         <SendIcon src={Send} />
       </form>
     </Wrapper>

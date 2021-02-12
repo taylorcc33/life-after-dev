@@ -20,18 +20,28 @@ const RequestAction = (props) => {
     sendRequest(props.projectId, props.userId);
   };
 
-  return props.page == "landing" ? (
-    <StyledButton onClick={handleClick}>{requestStatus}</StyledButton>
-  ) : (
-    <JoinButton
-      style={{ borderRadius: 10 }}
-      color="black"
-      onClick={handleClick}
-    >
-      <Icon name="bell outline" />
-      {requestStatus}
-    </JoinButton>
-  );
+  const renderRequestButton = () => {
+    if (requestStatus == "Join") {
+      return props.page == "landing" ? (
+        <StyledButton onClick={handleClick}>{requestStatus}</StyledButton>
+      ) : (
+        <JoinButton
+          style={{ borderRadius: 10 }}
+          color="black"
+          onClick={handleClick}
+        >
+          <Icon name="bell outline" />
+          {requestStatus}
+        </JoinButton>
+      );
+    } else if (requestStatus == "Joined") {
+      return <h3 style={{ color: "black" }}>Joined</h3>;
+    } else if (requestStatus == "Pending") {
+      return <h3 style={{ color: "black" }}>Pending</h3>;
+    }
+  };
+
+  return <>{renderRequestButton()}</>;
 };
 
 const StyledButton = styled.button`
