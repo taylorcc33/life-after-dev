@@ -53,7 +53,12 @@ const ProjectForm = ({ query, addProject, closeModal, userId }) => {
     },
   };
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const {
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    acceptedFiles,
+  } = useDropzone({ onDrop });
 
   return (
     <>
@@ -84,6 +89,13 @@ const ProjectForm = ({ query, addProject, closeModal, userId }) => {
               </p>
             )}
           </div>
+          <ul>
+            {acceptedFiles.map((f) => (
+              <li>
+                {f.path} - {f.size} bytes
+              </li>
+            ))}
+          </ul>
         </div>
         <Button color="green">Submit</Button>
       </Form>
