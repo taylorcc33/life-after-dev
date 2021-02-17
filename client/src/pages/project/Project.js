@@ -160,9 +160,9 @@ const Project = (props) => {
   return (
     <>
       <Wrapper>
-      {seen ? (
-        <ProjectPicModal toggle={togglePic} user={user} project={project} />
-      ) : null}
+        {seen ? (
+          <ProjectPicModal toggle={togglePic} user={user} project={project} />
+        ) : null}
         <ProjectSection>
           <BackButton>
             <RealBackButton onClick={() => history.goBack()}>
