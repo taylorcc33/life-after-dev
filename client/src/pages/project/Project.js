@@ -144,7 +144,7 @@ const Project = (props) => {
       // debugger;
       return (
         <JoinButtonDiv>
-          <RequestAction projectId={project?.id} userId={project?.user_id} />
+          <RequestAction projectId={props.match.params.id} userId={user.id} />
         </JoinButtonDiv>
       );
     } else {

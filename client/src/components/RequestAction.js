@@ -13,6 +13,7 @@ const RequestAction = (props) => {
 
   useEffect(() => {
     // debugger;
+    
     if (currentUser) checkRequests(props.projectId, props.userId);
     else console.log("it worked");
   }, [props.projectId]);
@@ -36,9 +37,9 @@ const RequestAction = (props) => {
         </JoinButton>
       );
     } else if (requestStatus == "Joined") {
-      return <h3 style={{ color: "black" }}>Joined</h3>;
+      return <h3 style={{ color: "green" }}>Joined</h3>;
     } else if (requestStatus == "Pending") {
-      return <h3 style={{ color: "black" }}>Pending</h3>;
+      return <h3 style={{ color: "green" }}>Pending</h3>;
     }
   };
 
