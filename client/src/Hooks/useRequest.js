@@ -114,6 +114,17 @@ const useRequest = () => {
     }
   };
 
+  const removeContributor = async (project_id, request_id) => {
+    try {
+      let res = await Axios.delete(
+        `/api/projects/${project_id}/requests/${request_id}`
+      );
+      console.log("removeContributor clicked");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return {
     sendRequest,
     checkRequests,
@@ -122,6 +133,7 @@ const useRequest = () => {
     myRequests,
     denyRequest,
     acceptRequest,
+    removeContributor,
   };
 };
 

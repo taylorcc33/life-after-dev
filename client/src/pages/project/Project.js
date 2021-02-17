@@ -39,6 +39,7 @@ import liveicon from "../../icons/language24px.svg";
 import binicon from "../../icons/bin.png";
 import DeleteProjectModal from "./DeleteProjectModal";
 import useContributor from "../../hooks/useContributor";
+import useRequest from "../../hooks/useRequest";
 
 const Project = (props) => {
   const [project, setProject] = useState(null);
@@ -46,6 +47,7 @@ const Project = (props) => {
   const { user } = useContext(AuthContext);
   const [seen, setSeen] = useState(false);
   const { contributors, getContributors } = useContributor();
+  const { removeContributor } = useRequest();
   let history = useHistory();
 
   useEffect(() => {
@@ -123,7 +125,7 @@ const Project = (props) => {
     return contributors.map((c) => {
       return (
         <ContributorsDiv>
-          <img src={binicon} />
+          <img src={binicon} onClick={() => removeContributor(project.id)} />
           <Link to={`/user/${c.user_id}`}>
             <ContPic src={c.image} />
           </Link>
