@@ -1,12 +1,13 @@
 import Axios from "axios";
 import { useState } from "react";
 
-const useRequest = (project, id) => {
+const useRequest = () => {
   const [requestStatus, setRequestStatus] = useState("Join");
   const [myRequests, setMyRequests] = useState([]);
 
   const checkRequests = (project, id) => {
-    // console.log("checkRequests", project);
+    console.log("checkRequests", project);
+    // debugger;
     Axios.get(`/api/projects/${project}/requests`)
       .then((res) => {
         res.data.forEach((r) => {
@@ -22,7 +23,7 @@ const useRequest = (project, id) => {
         });
       })
       .catch((err) => {
-        console.log("request hook error", err);
+        console.log("request hook error", project, err);
       });
   };
 

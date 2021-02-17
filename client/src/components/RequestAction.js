@@ -12,6 +12,7 @@ const RequestAction = (props) => {
   const { user: currentUser } = useContext(AuthContext);
 
   useEffect(() => {
+    // debugger;
     if (currentUser) checkRequests(props.projectId, props.userId);
     else console.log("it worked");
   }, [props.projectId]);

@@ -40,7 +40,7 @@ function Comments({ project }) {
 
   return (
     <>
-      {user?.id == project.user_id && <UserImage src={user.image} />}
+      {user?.id == project.user_id && <UserImage src={user?.image} />}
 
       <CommentsTotal>Comments ({comments?.length})</CommentsTotal>
       <CommentsList>
