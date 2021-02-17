@@ -14,7 +14,6 @@ import {
   ContributorDiv,
   ContributorsDiv,
   ContributorTitle,
-  CrudContainer,
   DescriptionDiv,
   EditButtonDiv,
   GithubIcon,
@@ -33,17 +32,12 @@ import {
 } from "../../styles/ProjectShowStyle";
 import ProjectPicModal from "./ProjectPicModal";
 import EditProjectModal from "../../components/EditProjectModal";
-import { Button, ButtonContent, Icon, Image } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import githubicon from "../../icons/github32px.png";
 import liveicon from "../../icons/language24px.svg";
-import { CrudIcon } from "../../styles/ProfileProjectStyle";
 import DeleteProjectModal from "./DeleteProjectModal";
 import useContributor from "../../hooks/useContributor";
-import {
-  ContributorImage,
-  ContributorWrapper,
-} from "../../styles/LandingPageStyle";
 
 const Project = (props) => {
   const [project, setProject] = useState(null);
