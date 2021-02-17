@@ -1,13 +1,9 @@
 import React, { useContext, useState } from "react";
 import Axios from "axios";
-import { Card, Image, Button } from "semantic-ui-react";
 import InfiniteScroll from "react-infinite-scroller";
 import useContributor from "../../hooks/useContributor";
 import LandingProjectCard from "./LandingProjectCard";
-import {
-  SiteInfoContainer,
-  SiteInfoRegisterButton,
-} from "../../styles/LandingPageStyle";
+import { SiteInfoRegisterButton } from "../../styles/LandingPageStyle";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
