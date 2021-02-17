@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Axios from "axios";
-import { Card, Image, Header, Container } from "semantic-ui-react";
-import InfiniteScroll from "react-infinite-scroller";
-import Comments from "../project/Comments";
 import useContributor from "../../hooks/useContributor";
 import { Link } from "react-router-dom";
 import {
