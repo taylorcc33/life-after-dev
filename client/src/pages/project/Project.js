@@ -36,6 +36,7 @@ import { Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import githubicon from "../../icons/github32px.png";
 import liveicon from "../../icons/language24px.svg";
+import binicon from "../../icons/bin.png";
 import DeleteProjectModal from "./DeleteProjectModal";
 import useContributor from "../../hooks/useContributor";
 
@@ -122,6 +123,7 @@ const Project = (props) => {
     return contributors.map((c) => {
       return (
         <ContributorsDiv>
+          <img src={binicon} />
           <Link to={`/user/${c.user_id}`}>
             <ContPic src={c.image} />
           </Link>
