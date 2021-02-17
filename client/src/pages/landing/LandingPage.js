@@ -1,12 +1,10 @@
 import SearchBar from "./SearchBar";
 import Scroller from "./Scroller";
 import LandingLogin from "./LandingLogin";
-import SearchResults from "../../components/SearchResults";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import LandingLogo from "../../images/LandingLogo.png";
 import styled from "styled-components";
-import Axios from "axios";
 import { Link } from "react-router-dom";
 import {
   SiteInfoRegisterButton,
@@ -67,4 +65,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
