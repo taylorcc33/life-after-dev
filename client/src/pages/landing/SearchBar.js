@@ -24,7 +24,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/results/${query}`);
+    history.push(`/results`);
   };
 
   return (

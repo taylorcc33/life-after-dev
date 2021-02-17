@@ -27,17 +27,26 @@ const LandingPage = () => {
     margin-bottom: 10px;
   `;
 
+  const renderRegisterButton = () => {
+    if (user?.id == null) {
+      return (
+        <Link to={`/register`}>
+          <SiteInfoRegisterButton>Register</SiteInfoRegisterButton>
+        </Link>
+      );
+    }
+  };
+
   return (
     <>
       <SearchBar />
       <LandingInfoWrap>
         <SiteInfoContainer>
-          
           <LandingLogoCon src={LandingLogo}></LandingLogoCon>
-        
+
           <p>
-            {" "} 
-               Life After Dev is a place for developers to share their ideas and
+            {" "}
+            Life After Dev is a place for developers to share their ideas and
             explore other projects that they might be interested in. Although
             many of us started at{" "}
             <a href="https://www.devpointlabs.com/">DevPointLabs</a>, anyone can
@@ -47,9 +56,7 @@ const LandingPage = () => {
           <p>
             <Link to={`/about`}>Learn about Life After Dev's developers</Link>
           </p>
-          <Link to={`/register`}>
-            <SiteInfoRegisterButton>Register</SiteInfoRegisterButton>
-          </Link>
+          {renderRegisterButton()}
         </SiteInfoContainer>{" "}
         {user?.id !== null && <LandingLogin />}
       </LandingInfoWrap>
@@ -60,3 +67,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+

@@ -8,6 +8,7 @@ export const useContributor = () => {
     Axios.get(`/api/projects/${project_id}/get_contributors`)
       .then((res) => {
         setContributors(res.data);
+        console.log("contributors", res.data);
       })
       .catch((err) => {
         console.log(err);

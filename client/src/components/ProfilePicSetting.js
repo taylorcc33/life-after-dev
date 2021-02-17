@@ -6,19 +6,19 @@ import { AuthContext } from "../providers/AuthProvider";
 
 export default (props) => {
   const [image, setImage] = useState(null);
-  const {updateProfile, userPhoto} = useCustomDrop()
+  const { updateProfile, userPhoto } = useCustomDrop();
 
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
     setImage(acceptedFiles[0]);
-    console.log(acceptedFiles[0])
+    console.log(acceptedFiles[0]);
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateProfile(props.user.id, image)
-    props.toggle()
-  }
+    updateProfile(props.user.id, image);
+    props.toggle();
+  };
 
   const styles = {
     modal: {
@@ -27,7 +27,7 @@ export default (props) => {
       width: "120%",
       height: "100%",
       backgroundColor: "rgba(0, 0, 0, 0.25)",
-      right: '1px',
+      right: "1px",
     },
     modal_content: {
       backgroundColor: "white",
@@ -38,15 +38,20 @@ export default (props) => {
       padding: "20px",
       borderRadius: "5px",
       border: "2px solid black",
-    }
-  }
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDrop });
+    },
+  };
+  const {
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    acceptedFiles,
+  } = useDropzone({ onDrop });
 
   return (
     <div className="modal" style={styles.modal}>
       <div className="modal_content" style={styles.modal_content}>
         <span className="close" onClick={props.toggle}>
-            &times;
+          &times;
         </span>
         <>
           <form onSubmit={handleSubmit}>
@@ -55,12 +60,15 @@ export default (props) => {
               <input {...getInputProps()} />
               {isDragActive ? (
                 <p>Drop the files here ...</p>
-                ) : (
-                <p>Drag and drop your profile picture here, or click to select a file.</p>
+              ) : (
+                <p>
+                  Drag and drop your profile picture here, or click to select a
+                  file.
+                </p>
               )}
             </div>
             <ul>
-              {acceptedFiles.map(f=> (
+              {acceptedFiles.map((f) => (
                 <li>
                   {f.path} - {f.size} bytes
                 </li>
@@ -71,5 +79,5 @@ export default (props) => {
         </>
       </div>
     </div>
-  )
-}
+  );
+};

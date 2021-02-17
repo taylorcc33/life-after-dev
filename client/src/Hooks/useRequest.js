@@ -6,15 +6,17 @@ const useRequest = (project, id) => {
   const [myRequests, setMyRequests] = useState([]);
 
   const checkRequests = (project, id) => {
-    console.log("checkRequests", project);
+    // console.log("checkRequests", project);
     Axios.get(`/api/projects/${project}/requests`)
       .then((res) => {
         res.data.forEach((r) => {
           if (r.user_id === id) {
             if (r.contributor === true) {
               setRequestStatus("Joined");
+              console.log("request status joined");
             } else {
               setRequestStatus("Pending");
+              console.log("request status pending");
             }
           }
         });

@@ -19,7 +19,7 @@ const ResultsPage = (props) => {
     Axios.get(`/api/all_projects/?query=${query}`)
       .then((res) => {
         setResults(res.data);
-        console.log(query, res.data);
+        console.log("Results", res.data);
         setError(null);
       })
       .catch((err) => {
