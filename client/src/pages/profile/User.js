@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import { Button, Icon } from "semantic-ui-react";
 import "./style.css";
 import { AuthContext } from "../../providers/AuthProvider";
-import ContributingProject from "./ContributingProject";
 import { Link, withRouter } from "react-router-dom";
 import UserProjects from "./UserProjects";
 import Requests from "./Requests";
