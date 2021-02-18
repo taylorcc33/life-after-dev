@@ -6,7 +6,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import UserProjects from "./UserProjects";
 import useRequest from "../../hooks/useRequest";
-import styled from "styled-components";
 import {
   Aboutlist,
   AboutLoggedIn,
