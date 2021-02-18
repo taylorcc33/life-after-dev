@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { Button, Icon } from "semantic-ui-react";
-import UserProject from "./UserProject";
 import "./style.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import ContributingProject from "./ContributingProject";
