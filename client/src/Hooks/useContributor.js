@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const useContributor = () => {
   const [contributors, setContributors] = useState([]);
