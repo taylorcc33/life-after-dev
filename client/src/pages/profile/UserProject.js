@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import useRequest from "../../hooks/useRequest";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
-import style from "./style.css";
 import {
   CardCol,
   CardContainer,
