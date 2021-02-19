@@ -4,11 +4,9 @@ import { Button, Card, Grid, Image } from "semantic-ui-react";
 import useRequest from "../../hooks/useRequest";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
-import style from "./style.css";
 import {
   CardContainer,
   CardDiv,
-  CrudIcon,
   ProjectPic,
   UserName,
   UserPic,
