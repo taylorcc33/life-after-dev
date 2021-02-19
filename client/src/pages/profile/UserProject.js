@@ -4,7 +4,6 @@ import useRequest from "../../hooks/useRequest";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import {
-  CardCol,
   CardContainer,
   CardsContainer,
   UserPic,
