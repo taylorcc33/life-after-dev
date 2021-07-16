@@ -1,4 +1,9 @@
-# Starter Proj
+# Life After Dev
+## A social media site for DevPoint Labs alumni
+
+This is an application that allows DevPoint Labs alumni to find each other, make connections, and also collaborate on projects together.
+The app is my final project I graduated with for the DevPoint Labs web development bootcamp.
+
 ## Steps to setup and run
 1. `git clone git@github.com:jimibue/react-rails-semantic-starter.git` CHANGE THIS TO YOUR REPO
 2. `cd project-name`
